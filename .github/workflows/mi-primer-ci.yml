@@ -1,0 +1,29 @@
+name: Mi primer Pipeline Devops
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pruebas-y -reportes: 
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1. Descargar mi codigo
+      uses: actions/checkout@v4
+    
+    - name: 2. Paso de QA (Validar que el script existe)
+      run: |
+        if [- f reporte.sh ]; then
+          echo " QA : El archivo de reporte existe. "
+        else 
+          echo " QA : Error, falta el archivo"
+          exit 1
+        fi
+      
+    - name: 3. Paso de DevOps (Ejecutar reporte)
+      run: |
+        chmod +x reporte.sh
+        ./reporte.sh
+
