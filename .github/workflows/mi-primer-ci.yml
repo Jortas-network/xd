@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  pruebas-y -reportes: 
+  pruebas-y-reportes: 
     runs-on: ubuntu-latest
 
     steps:
