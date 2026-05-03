@@ -15,7 +15,7 @@ jobs:
     
     - name: 2. Paso de QA (Validar que el script existe)
       run: |
-        if [- f reporte.sh ]; then
+        if [ -f reporte.sh ]; then
           echo " QA : El archivo de reporte existe. "
         else 
           echo " QA : Error, falta el archivo"
